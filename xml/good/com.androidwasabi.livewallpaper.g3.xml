@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<manifest android:installLocation="0" android:versionCode="1" android:versionName="1.0.0" package="com.androidwasabi.livewallpaper.g3" xmlns:android="http://schemas.android.com/apk/res/android">
+	
+
+	<supports-screens android:largeScreens="true" android:xlargeScreens="true">
+</supports-screens>
+	
+
+	<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19">
+</uses-sdk>
+	
+
+	<uses-feature android:glEsVersion="0x00020000" android:required="true">
+</uses-feature>
+	
+
+	<uses-feature android:name="android.software.live_wallpaper">
+</uses-feature>
+	
+
+	<uses-permission android:name="android.permission.INTERNET">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+</uses-permission>
+	
+
+	<application android:allowBackup="false" android:icon="@7F020014" android:label="@7F060099">
+		
+
+		<activity android:configChanges="0x00000FB0" android:label="@7F060099" android:name=".AppLauncher" android:theme="@android:01030008">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.MAIN">
+</action>
+				
+
+				<category android:name="android.intent.category.LAUNCHER">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<service android:label="@7F06009A" android:name=".G3" android:permission="android.permission.BIND_WALLPAPER">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.service.wallpaper.WallpaperService">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.service.wallpaper" android:resource="@7F040001">
+</meta-data>
+			
+
+		</service>
+		
+
+		<activity android:configChanges="0x00000FB0" android:exported="true" android:label="@7F06009B" android:name=".Settings" android:theme="@android:01030008">
+</activity>
+		
+
+		<receiver android:label="@7F060099" android:name=".SettingWidget">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F040002">
+</meta-data>
+			
+
+		</receiver>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.androidwasabi.ads.AdActivity">
+</activity>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.androidwasabi.ads.AdHandler" android:theme="@7F070000">
+</activity>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.google.ads.AdActivity">
+</activity>
+		
+
+		<activity android:configChanges="0x00000FB0" android:name="com.appbrain.AppBrainActivity">
+</activity>
+		
+
+		<receiver android:exported="true" android:name="com.appbrain.ReferrerReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.android.vending.INSTALL_REFERRER">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<service android:name="com.appbrain.AppBrainService">
+</service>
+		
+
+	</application>
+	
+
+</manifest>
